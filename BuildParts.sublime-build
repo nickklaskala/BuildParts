@@ -1,0 +1,35 @@
+{
+	"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+	"selector": "source.plain",
+
+	// "variants": 
+	// [
+	// 	{
+	// 		"name": "Selection",
+	// 		"cmd": "RunSelectionsWithPython"
+	// 	}
+	"variants": 
+	[
+		{
+			"name": "Py",
+			"cmd": ["python", "-u", "$file"],
+		},
+		{
+			"name": "PySelection",
+			"cmd": ["python", "C:/Program Files/Sublime Text 3/plain_selection.txt"]
+		},
+		{
+			"name": "Batch",
+		    "cmd": ["cmd", "/C", "${file_path}/${file_name}"],
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+		    "selector": "source.Batch"
+		},
+		{
+			"name": "BatchSelection",
+			"cmd": ["cmd", "/C", "C:/Program Files/Sublime Text 3/plain_selection.bat"],
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"selector": "source.Batch"
+		}
+	]
+}
+
